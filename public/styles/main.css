@@ -36,3 +36,7 @@ button{
 .hidden {
     display: none;
 }
+
+.clientResult, .inform, .findInform, .changemsg {
+    text-align: center
+}
