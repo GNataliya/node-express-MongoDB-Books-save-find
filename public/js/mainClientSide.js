@@ -11,15 +11,12 @@ const changeMsg =  document.querySelector('.changemsg');
 
 const getArticles = async () => {
     const { data } = await axios.post('/server');
-    //console.log(data)
     return data;
 };
 
 const renderArticles = async () => {
     const articles = await getArticles();
-    //console.log(data)
     const articlesCard = articles.reduce((acc, item) => {
-        //console.log(item)
         acc += `<div>${item.name}</div>`
         return acc;
     }, '');
@@ -39,11 +36,10 @@ formEl.addEventListener('submit', async (ev) => {
     ev.preventDefault();
     const formData = new FormData(ev.target);
     const { data } = await axios.post('/form', formData);
-    //console.log(data)
+    
     createForm.classList.add('hidden');
     informEl.classList.remove('hidden');  
 });
-
 
 
 
@@ -57,7 +53,7 @@ findnameform.addEventListener('submit', async (ev) => {
     ev.preventDefault();
     const formData = new FormData(ev.target);
     const { data } = await axios.post('/find', formData);
-    //console.log(data)
+    
     findForm.classList.add('hidden');
     // const html =`<p>${data[0].name}</p>`    // выведет имя
     const html =`<p>${data[0].text}</p>`      // отдает текст статьи
