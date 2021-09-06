@@ -20,7 +20,7 @@ const generalSchema = new Schema ({
         type: Schema.Types.String,
         default: '',
         required: true,
-        minlength:10,
+        minlength:3,
         maxlength:500
     },
     author: {
